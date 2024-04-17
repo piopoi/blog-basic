@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: blog-basic
+#  profiles:
+#    active: prod
+#    default: prod
+  data:
+    redis:
+      host: localhost
+      port: 6379
+  datasource:
+    url: jdbc:mysql://localhost:33306/blog-basic?serverTimezone=Asia/Seoul
+    username: blog-basic
+    password: blog-basic123#
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create-drop
+    generate-ddl: true
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+
+logging:
+  level:
+    org.springframework.jdbc.core: info
